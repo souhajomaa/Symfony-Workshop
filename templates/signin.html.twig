@@ -1,0 +1,17 @@
+{% block body %}
+    <h1>Authentification</h1>
+
+    {% if error is not empty %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form action="{{ path('app_signin') }}" method="post">
+        <label for="email">Adresse mail</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" required>
+
+        <button type="submit">Se connecter</button>
+    </form>
+{% endblock %}
